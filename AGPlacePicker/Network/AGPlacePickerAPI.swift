@@ -21,7 +21,7 @@ enum AGPlacePickerError: Error {
 class AGPlacePickerAPI: AGPlacePickerAPIProtocol {
     
     func fetchPlaces() async throws -> [AGPlace] {
-        guard let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=AIzaSyC249neu9LomaLh5HFrF-nqRjNiNmuVSjM") else {
+        guard let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=\(googleAPIKey)") else {
             throw AGPlacePickerError.badURL
         }
         
