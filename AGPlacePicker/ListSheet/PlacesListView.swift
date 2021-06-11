@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PlacesListView: View {
-    let searchResults = ["Places1", "Places2", "Places3"]
+    @ObservedObject var viewModel: PlacesListViewModel
+    
     var body: some View {
         List {
-            ForEach(searchResults, id: \.self) { result in
-                Text(result)
+            ForEach(viewModel.places) { place in
+                Text(place.name)
             }
         }
         .listStyle(PlainListStyle())
@@ -21,6 +22,6 @@ struct PlacesListView: View {
 
 struct PlacesListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlacesListView()
+        PlacesListView(viewModel: PlacesListViewModel(repository: AGPlacePickerRepository(service: AGPlacePickerAPI())))
     }
 }

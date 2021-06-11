@@ -37,6 +37,13 @@
 		8EF36FBE2673B29B00A9E16C /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF36FBC2673B29900A9E16C /* GoogleMapsCore.framework */; };
 		8EF36FC22673B30800A9E16C /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF36FC12673B30800A9E16C /* GoogleMaps.framework */; };
 		8EF36FC42673B30F00A9E16C /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EF36FC32673B30F00A9E16C /* GoogleMaps.bundle */; };
+		8EF36FC62673B3E900A9E16C /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FC52673B3E900A9E16C /* PlacesListViewModel.swift */; };
+		8EF36FC82673B4DC00A9E16C /* AGPlacePickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FC72673B4DC00A9E16C /* AGPlacePickerRepository.swift */; };
+		8EF36FCC2673C3F200A9E16C /* AGPlacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FCB2673C3F200A9E16C /* AGPlacesResponse.swift */; };
+		8EF36FCE2673C40D00A9E16C /* AGPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FCD2673C40D00A9E16C /* AGPlace.swift */; };
+		8EF36FD02673C4FB00A9E16C /* AGPlaceGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FCF2673C4FB00A9E16C /* AGPlaceGeometry.swift */; };
+		8EF36FD22673C51900A9E16C /* AGPlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FD12673C51900A9E16C /* AGPlaceLocation.swift */; };
+		8EF36FD52673C5A400A9E16C /* AGPlacePickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF36FD42673C5A400A9E16C /* AGPlacePickerAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +98,13 @@
 		8EF36FBC2673B29900A9E16C /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
 		8EF36FC12673B30800A9E16C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		8EF36FC32673B30F00A9E16C /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = AGPlacePicker/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		8EF36FC52673B3E900A9E16C /* PlacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewModel.swift; sourceTree = "<group>"; };
+		8EF36FC72673B4DC00A9E16C /* AGPlacePickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlacePickerRepository.swift; sourceTree = "<group>"; };
+		8EF36FCB2673C3F200A9E16C /* AGPlacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlacesResponse.swift; sourceTree = "<group>"; };
+		8EF36FCD2673C40D00A9E16C /* AGPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlace.swift; sourceTree = "<group>"; };
+		8EF36FCF2673C4FB00A9E16C /* AGPlaceGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlaceGeometry.swift; sourceTree = "<group>"; };
+		8EF36FD12673C51900A9E16C /* AGPlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlaceLocation.swift; sourceTree = "<group>"; };
+		8EF36FD42673C5A400A9E16C /* AGPlacePickerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGPlacePickerAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +177,13 @@
 		8EF36F5626739BED00A9E16C /* AGPlacePicker */ = {
 			isa = PBXGroup;
 			children = (
+				8EF36FD32673C59300A9E16C /* Network */,
+				8EF36FCA2673C3E200A9E16C /* Models */,
 				8EF36FB62673B21500A9E16C /* GooglePlaces.framework */,
 				8EF36FBA2673B28700A9E16C /* GoogleMapsBase.framework */,
 				8EF36FBC2673B29900A9E16C /* GoogleMapsCore.framework */,
 				8EF36FC12673B30800A9E16C /* GoogleMaps.framework */,
+				8EF36FC92673B50000A9E16C /* Repository */,
 				8EF36F8526739D0A00A9E16C /* ListSheet */,
 				8EF36F5726739BED00A9E16C /* AppDelegate.swift */,
 				8EF36F5926739BED00A9E16C /* SceneDelegate.swift */,
@@ -199,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF36F8826739DD200A9E16C /* PlacesListView.swift */,
+				8EF36FC52673B3E900A9E16C /* PlacesListViewModel.swift */,
 			);
 			path = ListSheet;
 			sourceTree = "<group>";
@@ -223,6 +241,33 @@
 				8EF36F932673AA5500A9E16C /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8EF36FC92673B50000A9E16C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8EF36FC72673B4DC00A9E16C /* AGPlacePickerRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8EF36FCA2673C3E200A9E16C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8EF36FCB2673C3F200A9E16C /* AGPlacesResponse.swift */,
+				8EF36FCD2673C40D00A9E16C /* AGPlace.swift */,
+				8EF36FCF2673C4FB00A9E16C /* AGPlaceGeometry.swift */,
+				8EF36FD12673C51900A9E16C /* AGPlaceLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8EF36FD32673C59300A9E16C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8EF36FD42673C5A400A9E16C /* AGPlacePickerAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,9 +404,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF36F5C26739BED00A9E16C /* ViewController.swift in Sources */,
+				8EF36FCC2673C3F200A9E16C /* AGPlacesResponse.swift in Sources */,
+				8EF36FD22673C51900A9E16C /* AGPlaceLocation.swift in Sources */,
 				8EF36F5826739BED00A9E16C /* AppDelegate.swift in Sources */,
+				8EF36FC62673B3E900A9E16C /* PlacesListViewModel.swift in Sources */,
+				8EF36FC82673B4DC00A9E16C /* AGPlacePickerRepository.swift in Sources */,
+				8EF36FCE2673C40D00A9E16C /* AGPlace.swift in Sources */,
 				8EF36F5A26739BED00A9E16C /* SceneDelegate.swift in Sources */,
+				8EF36FD02673C4FB00A9E16C /* AGPlaceGeometry.swift in Sources */,
 				8EF36F8926739DD200A9E16C /* PlacesListView.swift in Sources */,
+				8EF36FD52673C5A400A9E16C /* AGPlacePickerAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
