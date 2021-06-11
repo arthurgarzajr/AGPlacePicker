@@ -14,7 +14,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        showPlacesListView()
+    }
+
+    @IBAction func searchButtonTapped(_ sender: Any) {
+
+    }
+    
+    private func showPlacesListView() {
         let hostingViewController = UIHostingController(rootView: PlacesListView())
         hostingViewController.modalPresentationStyle = .popover
         if let popover = hostingViewController.popoverPresentationController {
@@ -26,11 +34,6 @@ class ViewController: UIViewController {
             sheet.widthFollowsPreferredContentSizeWhenEdgeAttached = true
         }
         present(hostingViewController, animated: true)
-    }
-
-
-    @IBAction func searchButtonTapped(_ sender: Any) {
-
     }
 }
 
