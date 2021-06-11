@@ -16,17 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zWl-Af-w3C">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwZ-Ar-wmQ" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </mapView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="top" secondItem="zWl-Af-w3C" secondAttribute="top" id="713-D4-bgP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWl-Af-w3C" secondAttribute="trailing" id="HpF-Mw-vN6"/>
-                            <constraint firstAttribute="bottom" secondItem="zWl-Af-w3C" secondAttribute="bottom" id="MKG-XJ-7ey"/>
-                            <constraint firstItem="zWl-Af-w3C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hkP-p9-DAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZwZ-Ar-wmQ" secondAttribute="trailing" id="7ad-5x-Ugd"/>
+                            <constraint firstAttribute="bottom" secondItem="ZwZ-Ar-wmQ" secondAttribute="bottom" id="Zrs-7F-gbs"/>
+                            <constraint firstAttribute="top" secondItem="ZwZ-Ar-wmQ" secondAttribute="top" id="efb-fY-Xw9"/>
+                            <constraint firstItem="ZwZ-Ar-wmQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="exQ-eJ-N0S"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Place Picker" id="uJi-z7-svU">
@@ -36,6 +37,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="ZwZ-Ar-wmQ" id="68z-oQ-6Q6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
