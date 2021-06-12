@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol AGPlacePickerAPIProtocol {
-    func fetchPlaces() async throws -> [AGPlace]
+    func fetchPlaces(near location: CLLocationCoordinate2D, radius: Int) async throws -> [AGPlace]
 }
 
 enum AGPlacePickerError: Error {
@@ -20,8 +21,10 @@ enum AGPlacePickerError: Error {
 
 class AGPlacePickerAPI: AGPlacePickerAPIProtocol {
     
-    func fetchPlaces() async throws -> [AGPlace] {
-        guard let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=harbour&key=\(googleAPIKey)") else {
+    func fetchPlaces(near location: CLLocationCoordinate2D, radius: Int) async throws -> [AGPlace] {
+        let urlComponents = getUrlComponents(near: location, radius: radius)
+
+        guard let url = urlComponents.url else {
             throw AGPlacePickerError.badURL
         }
         
@@ -37,5 +40,19 @@ class AGPlacePickerAPI: AGPlacePickerAPIProtocol {
         }
         
         return placesResponse.results
+    }
+    
+    private func getUrlComponents(near location: CLLocationCoordinate2D, radius: Int) -> URLComponents {
+        var components = URLComponents()
+            components.scheme = "https"
+            components.host = "maps.googleapis.com"
+            components.path = "/maps/api/place/nearbysearch/json"
+            components.queryItems = [
+                URLQueryItem(name: "location", value: "\(location.latitude),\(location.longitude)"),
+                URLQueryItem(name: "radius", value: String(radius)),
+                URLQueryItem(name: "key", value: googleAPIKey)
+            ]
+        print(components.url?.absoluteString)
+        return components
     }
 }

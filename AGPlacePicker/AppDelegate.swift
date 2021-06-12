@@ -13,7 +13,6 @@ let googleAPIKey = "AIzaSyCOld_TfxsGRB2gStXnq6QFTha6Wj6b8kg"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let appearance = UINavigationBarAppearance()

@@ -8,7 +8,7 @@
 import Foundation
 import GooglePlaces
 protocol AGPlacePickerRepositoryProtocol {
-    func fetchPlaces() async throws -> Void
+    func fetchPlaces(near location: CLLocationCoordinate2D, radius: Int) async throws -> Void
 }
 
 class AGPlacePickerRepository: ObservableObject, AGPlacePickerRepositoryProtocol {
@@ -21,8 +21,8 @@ class AGPlacePickerRepository: ObservableObject, AGPlacePickerRepositoryProtocol
         self.service = service
     }
     
-    func fetchPlaces() async throws {
-        let places = try await service.fetchPlaces()
+    func fetchPlaces(near location: CLLocationCoordinate2D, radius: Int) async throws {
+        let places = try await service.fetchPlaces(near: location, radius: radius)
         self.places = places
     }
 }

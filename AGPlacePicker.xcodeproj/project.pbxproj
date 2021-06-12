@@ -600,6 +600,9 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AGPlacePicker/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = AGPlacePicker;
+				INFOPLIST_KEY_CFBundleName = AGPlacePicker;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -632,6 +635,9 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AGPlacePicker/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = AGPlacePicker;
+				INFOPLIST_KEY_CFBundleName = AGPlacePicker;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
